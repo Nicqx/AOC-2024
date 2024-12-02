@@ -26,14 +26,8 @@ class Day2:
 
             if self.check_safety(local_list):
                 summa = summa + 1
-            else:
-                for i in range(len(local_list)):
-                    tmp_list = copy.deepcopy(local_list)
-                    tmp_list.remove(local_list[i])
-
-                    if self.check_safety(tmp_list):
-                        summa = summa + 1
-                        break
+            elif self.check_safety_w_correction(local_list):
+                summa = summa + 1
 
         return str(summa)
 
@@ -48,13 +42,22 @@ class Day2:
         else:
             return False
 
+    def check_safety_w_correction(self, loc_arr):
+        for i in range(len(loc_arr)):
+            tmp_list = copy.deepcopy(loc_arr)
+            tmp_list.remove(loc_arr[i])
+
+            if self.check_safety(tmp_list):
+                return True
+        return False
+
     def check_distance(self, loc_arr):
         i = 1
         while i < len(loc_arr):
             dist = abs(loc_arr[i - 1] - loc_arr[i])
-            i = i + 1
             if dist < 1 or dist > 3:
                 return False
+            i = i + 1
         return True
 
     def check_monotonity(self, loc_arr, is_increase):

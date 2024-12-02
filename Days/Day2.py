@@ -21,9 +21,9 @@ def check_if_monoton(loc_arr, is_increase):
     i = 1
     while i < len(loc_arr):
         if is_increase:
-            if loc_arr[i - 1] <= loc_arr[i]:
+            if loc_arr[i - 1] >= loc_arr[i]:
                 return False
-        elif loc_arr[i - 1] >= loc_arr[i]:
+        elif loc_arr[i - 1] <= loc_arr[i]:
             return False
         i = i + 1
     return True

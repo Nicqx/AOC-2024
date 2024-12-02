@@ -11,31 +11,42 @@ class Day2:
 
     def task1(self):
         summa = 0
-        for item in self.arr:
-            local_list = [int(item) for item in item.split(" ")]
-            if self.check_distance(local_list) and (
-                    self.check_monotonity(local_list, True) or self.check_monotonity(local_list, False)):
+        for one_line in self.arr:
+            local_list = self.convert_string_array_to_int_array(one_line)
+
+            if self.check_safety(local_list):
                 summa = summa + 1
 
         return str(summa)
 
     def task2(self):
         summa = 0
-        for item in self.arr:
-            local_list = [int(item) for item in item.split(" ")]
-            if self.check_distance(local_list) and (
-                    self.check_monotonity(local_list, True) or self.check_monotonity(local_list, False)):
+        for one_line in self.arr:
+            local_list = self.convert_string_array_to_int_array(one_line)
+
+            if self.check_safety(local_list):
                 summa = summa + 1
             else:
                 for i in range(len(local_list)):
                     tmp_list = copy.deepcopy(local_list)
                     tmp_list.remove(local_list[i])
-                    if self.check_distance(tmp_list) and (
-                            self.check_monotonity(tmp_list, True) or self.check_monotonity(tmp_list, False)):
+
+                    if self.check_safety(tmp_list):
                         summa = summa + 1
                         break
 
         return str(summa)
+
+    def convert_string_array_to_int_array(self, loc_line):
+        return [int(item) for item in loc_line.split(" ")]
+
+    def check_safety(self, loc_arr):
+        if self.check_distance(loc_arr) and (
+                            self.check_monotonity(loc_arr, True)
+                            or self.check_monotonity(loc_arr, False)):
+            return True
+        else:
+            return False
 
     def check_distance(self, loc_arr):
         i = 1

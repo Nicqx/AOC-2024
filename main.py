@@ -8,4 +8,4 @@ if __name__ == '__main__':
 
     d2 = Day2('Resources/Day2/input')
     print("day2 task1: " + d2.task1())
-    print("day2 task2 (291 too low): " + d2.task2())
+    print("day2 task2: " + d2.task2())

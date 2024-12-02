@@ -41,7 +41,8 @@ def check_safety(loc_arr):
 def check_safety_w_correction(loc_arr):
     for i in range(len(loc_arr)):
         tmp_list = copy.deepcopy(loc_arr)
-        tmp_list.remove(loc_arr[i])
+        # tmp_list.remove(loc_arr[i]) not ok, because if duplicate elements are exist and the second should be removed
+        del tmp_list[i]
 
         if check_safety(tmp_list):
             return True

@@ -93,16 +93,16 @@ class TestDay2(TestCase):
         actual_value = Day2('../Resources/Day2/test1').task2()
         self.assertEqual(expected_value, actual_value)
 
-    def test_task2_2(self): # needed for if the second of duplicate should be removed
+    def test_task2_2(self):  # needed for if the second of duplicate should be removed
         expected_value = str(10)
         actual_value = Day2('../Resources/Day2/test2').task2()
         self.assertEqual(expected_value, actual_value)
 
-def test_orig(self):
-    expected_value = str(220)
-    actual_value = Day2('../Resources/Day2/input').task1()
-    self.assertEqual(expected_value, actual_value)
+    def test_orig(self):
+        expected_value = str(220)
+        actual_value = Day2('../Resources/Day2/input').task1()
+        self.assertEqual(expected_value, actual_value)
 
-    expected_value = str(296)
-    actual_value = Day2('../Resources/Day2/input').task2()
-    self.assertEqual(expected_value, actual_value)
+        expected_value = str(296)
+        actual_value = Day2('../Resources/Day2/input').task2()
+        self.assertEqual(expected_value, actual_value)

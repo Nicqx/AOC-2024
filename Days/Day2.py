@@ -17,7 +17,7 @@ def check_distance(loc_arr):
     return True
 
 
-def check_if_monoton(loc_arr, is_increase):
+def check_if_monotone(loc_arr, is_increase):
     i = 1
     while i < len(loc_arr):
         if is_increase:
@@ -31,8 +31,8 @@ def check_if_monoton(loc_arr, is_increase):
 
 def check_safety(loc_arr):
     if check_distance(loc_arr) and (
-            check_if_monoton(loc_arr, True)
-            or check_if_monoton(loc_arr, False)):
+            check_if_monotone(loc_arr, True)
+            or check_if_monotone(loc_arr, False)):
         return True
     else:
         return False

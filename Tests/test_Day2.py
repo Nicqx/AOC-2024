@@ -23,25 +23,25 @@ class TestDay2(TestCase):
         actual_value = Day2('../Resources/Day2/test1').check_distance(arr_false2)
         self.assertEqual(expected_value, actual_value)
 
-    def test_check_increase(self):
+    def test_check_decrease(self):
         arr_true = [7, 6, 4, 2, 1]
         expected_value = True
         actual_value = Day2('../Resources/Day2/test1').check_monotonity(arr_true, True)
         self.assertEqual(expected_value, actual_value)
 
-    def test_check_decrease(self):
+    def test_check_increase(self):
         arr_true = [1, 2, 4, 6, 7]
         expected_value = True
         actual_value = Day2('../Resources/Day2/test1').check_monotonity(arr_true, False)
         self.assertEqual(expected_value, actual_value)
 
-    def test_check_increase2(self):
+    def test_check_decrease2(self):
         arr_true = [7, 6, 4, 5, 1]
         expected_value = False
         actual_value = Day2('../Resources/Day2/test1').check_monotonity(arr_true, True)
         self.assertEqual(expected_value, actual_value)
 
-    def test_check_decrease2(self):
+    def test_check_increase2(self):
         arr_true = [1, 5, 4, 6, 7]
         expected_value = False
         actual_value = Day2('../Resources/Day2/test1').check_monotonity(arr_true, False)

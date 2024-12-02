@@ -30,7 +30,6 @@ class Day2:
                 for i in range(len(local_list)):
                     tmp_list = copy.deepcopy(local_list)
                     tmp_list.remove(local_list[i])
-                    print(tmp_list)
                     if self.check_distance(tmp_list) and (
                             self.check_monotonity(tmp_list, True) or self.check_monotonity(tmp_list, False)):
                         summa = summa + 1
@@ -51,9 +50,9 @@ class Day2:
         i = 1
         while i < len(loc_arr):
             if is_increase:
-                if loc_arr[i - 1] < loc_arr[i]:
+                if loc_arr[i - 1] <= loc_arr[i]:
                     return False
-            elif loc_arr[i - 1] > loc_arr[i]:
+            elif loc_arr[i - 1] >= loc_arr[i]:
                 return False
             i = i + 1
         return True

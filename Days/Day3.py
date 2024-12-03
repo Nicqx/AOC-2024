@@ -21,5 +21,15 @@ class Day3:
 
     def task2(self):
         summa = 0
+        new_str = ''.join(self.arr[:])
+
+        pattern = r'don\'t\(\).*?do\(\)'
+        replace = ''
+        new_str = re.sub(pattern, replace, new_str)
+
+        pattern = r'(mul\((\d+),(\d+)\))'
+        result = re.findall(pattern, new_str)
+        for items in result:
+            summa = summa + int(items[1]) * int(items[2])
 
         return str(summa)

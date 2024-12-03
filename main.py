@@ -13,4 +13,4 @@ if __name__ == '__main__':
 
     d3 = Day3('Resources/Day3/input')
     print("day3 task1: " + d3.task1())
-    # print("day3 task2: " + d3.task2())
+    print("day3 task2: " + d3.task2())

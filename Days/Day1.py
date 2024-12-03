@@ -15,7 +15,7 @@ class Day1:
     def task1(self):
         left = []
         right = []
-        sum = 0
+        summa = 0
         for element in self.arr:
             pattern = r'(\d+)\s+(\d+)'
             match = re.search(pattern, element)
@@ -25,16 +25,16 @@ class Day1:
         right.sort()
 
         while left:
-            sum += abs(left[0] - right[0])
+            summa += abs(left[0] - right[0])
             left = left[1:]
             right = right[1:]
 
-        return str(sum)
+        return str(summa)
 
     def task2(self):
         left = []
         right = []
-        sum = 0
+        summa = 0
         for element in self.arr:
             pattern = r'(\d+)\s+(\d+)'
             match = re.search(pattern, element)
@@ -42,6 +42,6 @@ class Day1:
             right.append(int(match.group(2)))
 
         for element in left:
-            sum += right.count(element) * element
+            summa += right.count(element) * element
 
-        return str(sum)
+        return str(summa)

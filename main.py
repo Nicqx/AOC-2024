@@ -18,4 +18,4 @@ if __name__ == '__main__':
 
     d4 = Day4('Resources/Day4/input')
     print("day4 task1: " + d4.task1())
-    # print("day4 task2: " + d4.task2())
+    print("day4 task2: " + d4.task2())

@@ -14,7 +14,7 @@ class TestDay3(TestCase):
         actual_value = Day3('../Resources/Day3/test2').task2()
         self.assertEqual(expected_value, actual_value)
 
-    def test_task3(self):
+    def test_task2_2(self):
         expected_value = str(48)
         actual_value = Day3('../Resources/Day3/test3').task2()
         self.assertEqual(expected_value, actual_value)

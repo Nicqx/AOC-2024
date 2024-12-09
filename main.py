@@ -28,4 +28,4 @@ if __name__ == '__main__':
 
     d6 = Day6('Resources/Day6/input')
     print("day6 task1: " + d6.task1())
-    print("day6 task2: " + d6.task2())
+    print("day6 task2 1713 too low: " + d6.task2())
